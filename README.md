@@ -18,10 +18,6 @@ You should download the "UCI HAR Dataset" from [Raw Data](https://d396qusza40orc
 setwd("~/.../UCI HAR Dataset")
 ```
 
-```
-## Error: no es posible cambiar el directorio de trabajo
-```
-
 ... indicates your own directory
 
 Usage
@@ -33,14 +29,6 @@ Download "run_analysis.R" into your directory "UCI HAR Dataset" and use
 source('~/.../UCI HAR Dataset/run_analysis.R')
 ```
 
-```
-## Warning: no fue posible abrir el archivo '/Users/kestina/.../UCI HAR
-## Dataset/run_analysis.R': No such file or directory
-```
-
-```
-## Error: no se puede abrir la conexión
-```
 ... indicates your own directory
 
 To obtain the tidy data into your Global Environment use
@@ -49,9 +37,6 @@ To obtain the tidy data into your Global Environment use
 tidydata <- run_analysis()
 ```
 
-```
-## Error: no se pudo encontrar la función "run_analysis"
-```
 Also, it is created a text file "TidyData.txt" into you working directory with the tidy data set.
 
 ### It is required to have the "plyr" and "reshape2" packages installed.
@@ -93,18 +78,11 @@ This is achieved using the melt() function from the reshape2 package.
 MoltenData <- melt(TidyData,id=c(1,2),measure.vars=c(3:68), value.name="value")
 ```
 
-```
-## Error: no se pudo encontrar la función "melt"
-```
 #### Data with the average of each measure from tidy data for each activity and subject
 Using the dcast() function from the reshape2 package. It is indicated that it is required to perform the mean of every measure for each subject and activity.
 
 ```r
 CastData <- dcast(MoltenData,subject + activity ~ variable,mean) 
-```
-
-```
-## Error: no se pudo encontrar la función "dcast"
 ```
 
 #### Save the data into an txt file
